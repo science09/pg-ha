@@ -132,8 +132,10 @@ Waiting for 3 replies from the CRMd... OK
 Cleaning up pgsql:0 on pg1, removing fail-count-pgsql
 Cleaning up pgsql:0 on pg2, removing fail-count-pgsql
 Cleaning up pgsql:0 on pg3, removing fail-count-pgsql
+```
 
 - check status after a while
+```
 docker exec pg1 crm_mon -Afr -1
 Last updated: Fri Mar 18 10:02:14 2016		Last change: Fri Mar 18 10:02:07 2016 by root via crm_attribute on pg2
 Stack: corosync
