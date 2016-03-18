@@ -10,43 +10,33 @@ networks:
           gateway: 172.28.0.2
 
 services:
-  postgresql:
-    image: localhost:5000/pg:postgresql
-    build: ./postgresql
-    entrypoint: /bin/echo 0
  
-  postgresql1:
-    image: localhost:5000/pg:postgresql1
-    container_name: postgresql1
-    hostname: postgresql1
+  pg1:
+    image: localhost:5000/pg:postgresql
+    container_name: pg1
+    hostname: pg1
     privileged: true
-    build: ./postgresql1
-    depends_on:
-      - postgresql
+    build: ./postgresql
     env_file: .env
     environment:
       - ROLE=MASTER
 
-  postgresql2:
-    container_name: postgresql2
-    hostname: postgresql2
+  pg2:
+    container_name: pg2
+    hostname: pg2
     privileged: true
-    image: localhost:5000/pg:postgresql2
-    build: ./postgresql2
-    depends_on:
-      - postgresql
+    image: localhost:5000/pg:postgresql
+    build: ./postgresql
     env_file: .env
     environment:
       - ROLE=SLAVE
 
-  postgresql3:
-    container_name: postgresql3
-    hostname: postgresql3
+  pg3:
+    container_name: pg3
+    hostname: pg3
     privileged: true
-    image: localhost:5000/pg:postgresql2
-    build: ./postgresql2
-    depends_on:
-      - postgresql
+    image: localhost:5000/pg:postgresql
+    build: ./postgresql
     env_file: .env
     environment:
       - ROLE=SLAVE
