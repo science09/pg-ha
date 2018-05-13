@@ -9,8 +9,7 @@ networks:
           ip_range: 172.28.32.0/27
           gateway: 172.28.0.2
 
-services:
- 
+services: 
   pg1:
     image: localhost:5000/pg:postgresql
     container_name: pg1

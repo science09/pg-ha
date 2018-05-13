@@ -1,12 +1,13 @@
-FROM localhost:5000/debian:stretch
+#FROM debian:stretch
+FROM ubuntu:16.04
 
-MAINTAINER me
+MAINTAINER luozhaofeng86@163.com
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN \
   apt-get update && \
-  apt-get install -y wget postgresql postgresql-contrib postgresql-client
+  apt-get install -y wget postgresql postgresql-contrib postgresql-client iputils-ping
 
 RUN apt-get update && \
   apt-get install -y rsync openssh-client openssh-server bind9-host corosync pacemaker vim less man tcpdump crmsh

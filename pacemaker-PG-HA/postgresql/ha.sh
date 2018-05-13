@@ -20,7 +20,7 @@ totem {
     cluster_name: docker
     interface {
         ringnumber: 0
-        bindnetaddr: `ip -f inet addr show eth0 |tail -1 | sed -e "s/^[^0-9]\+//" | sed -e "s/\/.\+$//"`
+        bindnetaddr: `ip -f inet addr show eth0 |tail -2 | sed -e "s/^[^0-9]\+//" | sed -e "s/\/.\+$//"`
     }
 }
 logging {
